@@ -6,6 +6,7 @@
   color: white;
   display: flex; 
   flex-direction: row;
+  font-size: medium;
 }
 
 h2{
@@ -33,13 +34,14 @@ li {
 }
 
 .nav{
-  width: 20%;
+  width: auto;
   padding: 2vw;
 }
 
 .content{
   background-color: rgb(7, 7, 8);
-  width: 80%;
+  flex-grow: 1;
+  flex-direction: column;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -50,3 +52,11 @@ li {
 ul{
   margin: 0px;
 }
+
+.collapsible{
+  height: 0px;
+  overflow: hidden;
+  transition: height ease-in-out 0.3s;
+  margin: 0 auto;
+}
+
