@@ -2,7 +2,7 @@
   text-align: left;
   background-color: #131212;
   height: 100vh;
-  width: 100vw; 
+  width: 100%; 
   color: white;
   display: flex; 
   flex-direction: row;
@@ -68,12 +68,12 @@ ul{
   height: 4vh; 
   background-color: #220011;
   margin:0;
-  width: 100vw;
-  padding: 0px 5px;
+  width: 98%;
+  padding: 0px 20px;
   color: var(--primary-color);
   flex-direction: row;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   font-size: 14px;
 }
