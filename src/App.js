@@ -2,6 +2,9 @@
 import './App.css';
 import { useEffect, useRef, useState } from 'react';
 import Projects from './Projects.js';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import MailIcon from '@material-ui/icons/Mail';
+import { Grid } from '@material-ui/core';
 // make each of these their own component with nested menu items that animate open on select
 // elements of array will be their own react componenets 
 
@@ -51,9 +54,11 @@ function SubProjects(props) {
         style={'projects' === props.selected
           ? {
             height: projRef.current.scrollHeight + 'px',
+            opacity: 1
           } :
           {
-            height: "0px"
+            height: "0px",
+            opacity: 0
           }
 
 
@@ -90,13 +95,16 @@ function SubExperience(props) {
         style={'experience' === props.selected
           ? {
             height: expRef.current.scrollHeight + 'px',
+            opacity: 1
           } :
           {
-            height: "0px"
+            height: "0px",
+            opacity: 0
           }
-
-
         }
+
+
+        
       >
         <ul>
           {experiences.map((experience, i) => (
@@ -128,6 +136,7 @@ function SubInterests(props) {
         style={'interests' === props.selected
           ? {
             height: inRef.current.scrollHeight + 'px',
+            opacity: 1
           } :
           {
             height: "0px"
@@ -167,6 +176,7 @@ function SubResume(props) {
         style={'resume' === props.selected
           ? {
             height: resRef.current.scrollHeight + 'px',
+            opacity: 1
           } :
           {
             height: "0px"
@@ -331,6 +341,12 @@ function App() {
         <h1> {selected} </h1>
         {selected === defaultSelect && <p> use 'w' and 's' to move up and down and 'x' to go back. </p>}
       </div>
+
+      <div className = "footer">
+           <div><p>613-214-8016</p></div>
+           <div> <GitHubIcon fontSize = 'small'> </GitHubIcon> <MailIcon fontSize = 'small'> </MailIcon></div>
+           <div><p> welcometowasif.xyz:v1.0</p></div>
+     </div>
     </div>
   );
 }

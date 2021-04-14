@@ -6,7 +6,7 @@
   color: white;
   display: flex; 
   flex-direction: row;
-  font-size: medium;
+  font-size: 20px;
 }
 
 h2{
@@ -17,7 +17,7 @@ h2{
 h1{
   margin: 0px;
   font-weight: 300;
-  color: rgb(2, 166, 207);
+  color: var(--primary-color);
 }
 
 h3{
@@ -30,8 +30,9 @@ li {
 }
 
 .active {
-  color: rgb(2, 166, 207);
+  color: var(--primary-color);
 }
+
 
 .nav{
   width: auto;
@@ -46,7 +47,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: aliceblue;
+  color: rgb(255, 255, 255);
 }
 
 ul{
@@ -55,8 +56,36 @@ ul{
 
 .collapsible{
   height: 0px;
+  opacity: 0; 
   overflow: hidden;
-  transition: height ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
   margin: 0 auto;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0px;
+  height: 4vh; 
+  background-color: #220011;
+  margin:0;
+  width: 100vw;
+  padding: 0px 5px;
+  color: var(--primary-color);
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer1{
+  position: absolute;
+  bottom: 0px;
+  height: 3vh; 
+  background-color: #220011;
+  margin:0;
+  padding: 0;
+  width: 100%;
+  font-size: 14px;
 }
 
