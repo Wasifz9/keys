@@ -72,15 +72,15 @@ function SubProjects(props) {
 
         }
       >
-        <ul>
+        
           {projects.map((project, i) => (
             <div
-              className={i === props.curs ? 'active' : null}
+              className={i === props.curs ? 'active subitem' : 'subitem'}
             > > {project}
             </div>
           ))}
 
-        </ul>
+        
       </div>
 
     </>
@@ -114,15 +114,15 @@ function SubExperience(props) {
 
         
       >
-        <ul>
+      
           {experiences.map((experience, i) => (
             <div
-              className={i === props.curs ? 'active' : null}
+              className={i === props.curs ? 'active subitem' : 'subitem'}
             > > {experience}
             </div>
           ))}
 
-        </ul>
+        
       </div>
 
     </>
@@ -153,15 +153,15 @@ function SubInterests(props) {
 
         }
       >
-        <ul>
           {interests.map((interest, i) => (
             <div
-              className={i === props.curs ? 'active' : null}
+              className={i === props.curs ? 'active subitem' : 'subitem'}
+            
             > > {interest}
             </div>
           ))}
 
-        </ul>
+        
       </div>
 
 
@@ -193,19 +193,18 @@ function SubResume(props) {
 
         }
       >
-        <ul>
           {resumes.map((resume, i) => (
             <div
-              className={i === props.curs ? 'active' : null}
+              className={i === props.curs ? 'active subitem' : 'subitem' }
             > > {resume}
             </div>
           ))}
 
-        </ul>
       </div>
     </>
   )
 }
+
 function App() {
 
   useEffect (() => {
@@ -239,8 +238,8 @@ function App() {
   const [expCurs, setExpCurs] = useState(0);
   const [inCurs, setInCurs] = useState(0);
   const [resCurs, setResCurs] = useState(0);
-
-
+  const [explorerIsOpen, toggleExplorer] = useState(false); 
+  
   function handleUp() {
     if (selected === defaultSelect) {
       if (highlighted === 0) {
@@ -322,18 +321,23 @@ function App() {
     setProjCurs(0);
   }
 
+  function handleExplore (){
+    toggleExplorer(!explorerIsOpen); 
+  }
+  
+  useKey("KeyT", handleExplore);
   useKey("KeyW", handleUp);
   useKey("Enter", handleEnter);
   useKey("KeyS", handleDown);
   useKey("KeyX", handleX);
+  
 
   return (
 
     <div className="App">
-      <div className="nav" id = 'naver'>
-        <h1> wasif_zulkernine </h1>
-        <h2> > me </h2>
-        <ul>
+      <div className= {explorerIsOpen ? "nav opennav" : "nav"} id = 'naver'>
+        <h2> wasifz9 </h2>
+        
           <SubProjects
             selected={selected}
             highlighted={highlighted}
@@ -360,7 +364,7 @@ function App() {
           </SubResume>
 
 
-        </ul>
+      
       </div>
       <div className="content">
         <div className = "tabs"> 
@@ -377,7 +381,7 @@ function App() {
         }
         </div> 
         <h1> {selected} </h1>
-        {selected === defaultSelect && <p> use 'w' and 's' to move up and down and 'x' to go back. </p>}
+        {selected === defaultSelect && <p> For keyboard enthusiasts: use 't' to toggle the explorer then use 'w' and 's' to move up and down and 'x' to go back. </p>}
       </div>
 
       <div className = "footer">
