@@ -5,6 +5,7 @@ import Projects from './Projects.js';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import MailIcon from '@material-ui/icons/Mail';
 import { Grid } from '@material-ui/core';
+import { StayPrimaryLandscape } from '@material-ui/icons';
 // make each of these their own component with nested menu items that animate open on select
 // elements of array will be their own react componenets 
 
@@ -200,6 +201,20 @@ function SubResume(props) {
 }
 function App() {
 
+  useEffect (() => {
+    var colors = [
+        '#ff0000', '#00ff00', '#0000ff',
+        '#ff3333', '#ffff00', '#ff6600'
+    ];
+      
+    // selecting random color
+    var random_color = colors[Math.floor(
+            Math.random() * colors.length)];
+      
+    var x = document.getElementById('html');
+    x.style.color = random_color;
+  });
+
   const [highlighted, setHighlighted] = useState(0);
   const [selected, setSelected] = useState(defaultSelect);
   const [projCurs, setProjCurs] = useState(0);
@@ -297,18 +312,10 @@ function App() {
   return (
 
     <div className="App">
-      <div className="nav">
+      <div className="nav" id = 'naver'>
         <h1> wasif_zulkernine </h1>
         <h2> > me </h2>
         <ul>
-          {/*sections.map((section, i)=> (
-  
-                  <div 
-                  className = {i === highlighted ? 'active' : null}
-                  > > {section}
-                </div> 
-   
-              ))*/}
           <SubProjects
             selected={selected}
             highlighted={highlighted}
@@ -343,7 +350,6 @@ function App() {
       </div>
 
       <div className = "footer">
-           <div><p>613-214-8016</p></div>
            <div> <GitHubIcon fontSize = 'small'> </GitHubIcon> <MailIcon fontSize = 'small'> </MailIcon></div>
            <div><p> welcometowasif.xyz:v1.0</p></div>
      </div>
