@@ -210,17 +210,28 @@ function App() {
 
   useEffect (() => {
     var colors = [
-        '#ff0000', '#00ff00', '#0000ff',
-        '#ff3333', '#ffff00', '#ff6600'
+        '#F5007A', '#ff2626', '#26ccff', '#e6a900'
+    ];
+
+    var sec_colors = [
+       '#220011','#3d0000', '#001c33', '#032700', '#473400'   
     ];
       
+    const random_index  = Math.floor(Math.random() * colors.length);
     // selecting random color
-    var random_color = colors[Math.floor(
-            Math.random() * colors.length)];
-      
-    var x = document.getElementById('html');
-    x.style.color = random_color;
-  });
+    var random_color = colors[random_index];
+    var random_color2 = sec_colors[random_index];
+       
+   
+    document.documentElement.style.setProperty(
+     `--primary-color`, 
+     random_color
+    )
+    document.documentElement.style.setProperty(
+     `--secondary-color`, 
+     random_color2
+    )
+  }, []);
 
   const [highlighted, setHighlighted] = useState(0);
   const [selected, setSelected] = useState(defaultSelect);
@@ -355,7 +366,11 @@ function App() {
         <div className = "tabs"> 
         {
           tabs.map((tab, i) => (
-            <div className = {selected === tab ? 'tab activetab' : 'tab'}>
+            <div className = {selected === tab ? 'tab activetab' : 'tab'}
+                 onClick = {() => {
+                   setSelected(tab);
+                   i === 0 ? setHighlighted(0) : setHighlighted(i-1);
+                   }}>
               {tab}
             </div>
           ))

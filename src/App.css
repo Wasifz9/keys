@@ -27,6 +27,7 @@ h3{
 
 li {
   list-style: none;
+  font-weight: 100;
 }
 
 .active {
@@ -67,7 +68,7 @@ ul{
   position: absolute;
   bottom: 0px;
   height: 4vh; 
-  background-color: #220011;
+  background-color:#131212;
   margin:0;
   width: 98%;
   padding: 0px 20px;
@@ -110,6 +111,10 @@ ul{
   background-color: #131212;
   min-width: 5vw;
   transition: all linear 0.1s;
+}
+
+.tab:hover {
+  cursor: pointer;
 }
 
 .activetab {
