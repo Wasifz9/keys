@@ -6,6 +6,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import MailIcon from '@material-ui/icons/Mail';
 import { Grid } from '@material-ui/core';
 import { StayPrimaryLandscape } from '@material-ui/icons';
+
 // make each of these their own component with nested menu items that animate open on select
 // elements of array will be their own react componenets 
 
@@ -16,6 +17,12 @@ const projects = ['webdev', 'machine learning', 'c/cpp'];
 const experiences = ['internships', 'freelancing', 'leadership'];
 const interests = ['tech', 'extras'];
 const resumes = ['webdev', 'machine learning', 'c/cpp'];
+
+const tabs = [defaultSelect , 'projects', 'experience', 'interests', 'resume'];
+const projInd = sections.indexOf('projects');
+const expInd = sections.indexOf('experience');
+const intInd = sections.indexOf('interests');
+const resInd = sections.indexOf('resume');
 
 
 function useKey(key, callback) {
@@ -45,7 +52,7 @@ function SubProjects(props) {
   return (
     <>
       <div
-        className={0 === props.highlighted ? 'active' : null}
+        className={projInd === props.highlighted ? 'active' : null}
       > > projects
       </div>
 
@@ -86,7 +93,7 @@ function SubExperience(props) {
   return (
     <>
       <div
-        className={1 === props.highlighted ? 'active' : null}
+        className={expInd === props.highlighted ? 'active' : null}
       > > experience
       </div> 
 
@@ -127,7 +134,7 @@ function SubInterests(props) {
   return (
     <>
       <div
-        className={2 === props.highlighted ? 'active' : null}
+        className={intInd === props.highlighted ? 'active' : null}
       > > interests
       </div>
 
@@ -167,7 +174,7 @@ function SubResume(props) {
   return (
     <>
       <div
-        className={3 === props.highlighted ? 'active' : null}
+        className={resInd === props.highlighted ? 'active' : null}
       > > resume
       </div>
 
@@ -345,6 +352,15 @@ function App() {
         </ul>
       </div>
       <div className="content">
+        <div className = "tabs"> 
+        {
+          tabs.map((tab, i) => (
+            <div className = {selected === tab ? 'tab activetab' : 'tab'}>
+              {tab}
+            </div>
+          ))
+        }
+        </div> 
         <h1> {selected} </h1>
         {selected === defaultSelect && <p> use 'w' and 's' to move up and down and 'x' to go back. </p>}
       </div>
