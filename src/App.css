@@ -1,9 +1,8 @@
 .App {
   text-align: left;
-  background-color: #131212;
   height: 100vh;
   width: 100%; 
-  color: white;
+  color: var(--text-color);
   display: flex; 
   flex-direction: row;
   font-size: 18px;
@@ -50,23 +49,24 @@ li {
   width: 0px; 
   padding: 0px;
   font-weight: 300;
-  transition: width ease 0.3s;
+  opacity: 0;
+  background-color: var(--nav-background);
 }
 
 .opennav{
-  width:auto;
+  width:12vw;
   padding: .5vw 1vw;
+  opacity: 1; 
 }
 
 .content{
-  background-color: rgb(7, 7, 8);
+  background-color: var(--main-background);
   flex-grow: 1;
   flex-direction: column;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(255, 255, 255);
   position: relative; 
 }
 
@@ -86,7 +86,7 @@ ul{
   position: absolute;
   bottom: 0px;
   height: 4vh; 
-  background-color:#131212;
+  background-color:var(--nav-background);
   margin:0;
   width: 98%;
   padding: 0px 20px;
@@ -126,7 +126,7 @@ ul{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #131212;
+  background-color: var(--nav-background);
   min-width: 5vw;
   transition: all linear 0.1s;
 }
@@ -136,7 +136,9 @@ ul{
 }
 
 .activetab {
-  background-color: rgb(7, 7, 8);
-  border-top: 1px solid var(--primary-color);
+  background-color: var(--main-background);
+  border-top: 2px solid var(--primary-color);
 
 }
+
+

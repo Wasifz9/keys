@@ -367,6 +367,7 @@ function App() {
       
       </div>
       <div className="content">
+
         <div className = "tabs"> 
         {
           tabs.map((tab, i) => (
