@@ -53,6 +53,41 @@ li {
   background-color: var(--nav-background);
 }
 
+.mobile-nav-overlay { 
+  height: 0px; 
+  left:0;
+  position: fixed; 
+  background-color: var(--primary-color);
+  color: black; 
+  top: 0; 
+  transition: height ease-in 0.3s;
+  z-index: 1;
+  width:100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.h1-mobile-title { 
+  color: black;
+}
+.open.mobile-nav-overlay {
+  height: 100vh; 
+
+}
+.hide {
+  display: none; 
+}
+
+.close-icon {
+  font-weight:bolder;
+  top:0; 
+  right: 0; 
+  position: fixed;
+  padding: 1em;
+  font-size: 30px;
+}
 .opennav{
   width:12vw;
   padding: .5vw 1vw;
@@ -68,6 +103,16 @@ li {
   justify-content: center;
   align-items: center;
   position: relative; 
+  text-align: center;
+}
+
+.mobileNav {
+  top: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+
 }
 
 ul{
@@ -83,19 +128,22 @@ ul{
 }
 
 .footer{
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   height: 4vh; 
   background-color:var(--nav-background);
   margin:0;
-  width: 98%;
-  padding: 0px 20px;
-  color: var(--primary-color);
+  width:100vw;
   flex-direction: row;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
+  font-weight: 100;
+}
+
+.footer-section{
+  padding: 0 1em; 
 }
 
 .footer1{
@@ -116,6 +164,8 @@ ul{
   height: 4vh;
   display: flex;  
   flex-direction: row;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .tab {
@@ -138,7 +188,13 @@ ul{
 .activetab {
   background-color: var(--main-background);
   border-top: 2px solid var(--primary-color);
-
+  font-weight: 200;
 }
 
-
+.header {
+  background-color: var(--nav-background);
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

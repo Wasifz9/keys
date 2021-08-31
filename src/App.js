@@ -2,8 +2,10 @@
 import './App.css';
 import { useEffect, useRef, useState } from 'react';
 import Projects from './Projects.js';
+import About from './pages/About.js'; 
 import GitHubIcon from '@material-ui/icons/GitHub';
 import MailIcon from '@material-ui/icons/Mail';
+import Media from 'react-media';
 import { Grid } from '@material-ui/core';
 import { StayPrimaryLandscape } from '@material-ui/icons';
 
@@ -18,7 +20,7 @@ const experiences = ['internships', 'freelancing', 'leadership'];
 const interests = ['tech', 'extras'];
 const resumes = ['webdev', 'machine learning', 'c/cpp'];
 
-const tabs = [defaultSelect , 'projects', 'experience', 'interests', 'resume'];
+const tabs = [defaultSelect, 'projects', 'experience', 'interests', 'resume'];
 const projInd = sections.indexOf('projects');
 const expInd = sections.indexOf('experience');
 const intInd = sections.indexOf('interests');
@@ -72,15 +74,15 @@ function SubProjects(props) {
 
         }
       >
-        
-          {projects.map((project, i) => (
-            <div
-              className={i === props.curs ? 'active subitem' : 'subitem'}
-            > > {project}
-            </div>
-          ))}
 
-        
+        {projects.map((project, i) => (
+          <div
+            className={i === props.curs ? 'active subitem' : 'subitem'}
+          > > {project}
+          </div>
+        ))}
+
+
       </div>
 
     </>
@@ -95,7 +97,7 @@ function SubExperience(props) {
       <div
         className={expInd === props.highlighted ? 'active' : null}
       > > experience
-      </div> 
+      </div>
 
       <div
         className='collapsible'
@@ -112,17 +114,17 @@ function SubExperience(props) {
         }
 
 
-        
-      >
-      
-          {experiences.map((experience, i) => (
-            <div
-              className={i === props.curs ? 'active subitem' : 'subitem'}
-            > > {experience}
-            </div>
-          ))}
 
-        
+      >
+
+        {experiences.map((experience, i) => (
+          <div
+            className={i === props.curs ? 'active subitem' : 'subitem'}
+          > > {experience}
+          </div>
+        ))}
+
+
       </div>
 
     </>
@@ -153,15 +155,15 @@ function SubInterests(props) {
 
         }
       >
-          {interests.map((interest, i) => (
-            <div
-              className={i === props.curs ? 'active subitem' : 'subitem'}
-            
-            > > {interest}
-            </div>
-          ))}
+        {interests.map((interest, i) => (
+          <div
+            className={i === props.curs ? 'active subitem' : 'subitem'}
 
-        
+          > > {interest}
+          </div>
+        ))}
+
+
       </div>
 
 
@@ -170,7 +172,7 @@ function SubInterests(props) {
   )
 }
 function SubResume(props) {
-  const resRef = useRef(); 
+  const resRef = useRef();
   return (
     <>
       <div
@@ -178,7 +180,7 @@ function SubResume(props) {
       > > resume
       </div>
 
-         <div
+      <div
         className='collapsible'
         ref={resRef}
         style={'resume' === props.selected
@@ -193,42 +195,44 @@ function SubResume(props) {
 
         }
       >
-          {resumes.map((resume, i) => (
-            <div
-              className={i === props.curs ? 'active subitem' : 'subitem' }
-            > > {resume}
-            </div>
-          ))}
+        {resumes.map((resume, i) => (
+          <div
+            className={i === props.curs ? 'active subitem' : 'subitem'}
+          > > {resume}
+          </div>
+        ))}
 
       </div>
     </>
   )
 }
 
+
+
 function App() {
 
-  useEffect (() => {
+  useEffect(() => {
     var colors = [
-        '#F5007A', '#ff2626', '#26ccff', '#e6a900'
+      '#F5007A', '#ff2626', '#26ccff', '#e6a900'
     ];
 
     var sec_colors = [
-       '#220011','#3d0000', '#001c33', '#032700', '#473400'   
+      '#220011', '#3d0000', '#001c33', '#032700', '#473400'
     ];
-      
-    const random_index  = Math.floor(Math.random() * colors.length);
+
+    const random_index = Math.floor(Math.random() * colors.length);
     // selecting random color
     var random_color = colors[random_index];
     var random_color2 = sec_colors[random_index];
-       
-   
+
+
     document.documentElement.style.setProperty(
-     `--primary-color`, 
-     random_color
+      `--primary-color`,
+      random_color
     )
     document.documentElement.style.setProperty(
-     `--secondary-color`, 
-     random_color2
+      `--secondary-color`,
+      random_color2
     )
   }, []);
 
@@ -238,8 +242,9 @@ function App() {
   const [expCurs, setExpCurs] = useState(0);
   const [inCurs, setInCurs] = useState(0);
   const [resCurs, setResCurs] = useState(0);
-  const [explorerIsOpen, toggleExplorer] = useState(false); 
-  
+  const [explorerIsOpen, toggleExplorer] = useState(false);
+  const [mobileMenuIsOpen, toggleMobileMenu] = useState(false); 
+
   function handleUp() {
     if (selected === defaultSelect) {
       if (highlighted === 0) {
@@ -316,79 +321,120 @@ function App() {
   function handleX() {
     setSelected(defaultSelect);
     setExpCurs(0);
-    setInCurs(0); 
+    setInCurs(0);
     setResCurs(0);
     setProjCurs(0);
   }
 
-  function handleExplore (){
-    toggleExplorer(!explorerIsOpen); 
+  function handleExplore() {
+    toggleExplorer(!explorerIsOpen);
   }
-  
+
   useKey("KeyT", handleExplore);
   useKey("KeyW", handleUp);
   useKey("Enter", handleEnter);
   useKey("KeyS", handleDown);
   useKey("KeyX", handleX);
-  
+
 
   return (
 
     <div className="App">
-      <div className= {explorerIsOpen ? "nav opennav" : "nav"} id = 'naver'>
+      <div className={explorerIsOpen ? "nav opennav" : "nav"} id='naver'>
         <h2> wasifz9 </h2>
-        
-          <SubProjects
-            selected={selected}
-            highlighted={highlighted}
-            curs={projCurs}
-          >
-          </SubProjects>
-          <SubExperience
-            selected={selected}
-            highlighted={highlighted}
-            curs={expCurs}
-          >
-          </SubExperience>
-          <SubInterests
-            selected={selected}
-            highlighted={highlighted}
-            curs={inCurs}
-          >
-          </SubInterests>
-          <SubResume
-            selected={selected}
-            highlighted={highlighted}
-            curs={resCurs}
-          >
-          </SubResume>
+
+        <SubProjects
+          selected={selected}
+          highlighted={highlighted}
+          curs={projCurs}
+        >
+        </SubProjects>
+        <SubExperience
+          selected={selected}
+          highlighted={highlighted}
+          curs={expCurs}
+        >
+        </SubExperience>
+        <SubInterests
+          selected={selected}
+          highlighted={highlighted}
+          curs={inCurs}
+        >
+        </SubInterests>
+        <SubResume
+          selected={selected}
+          highlighted={highlighted}
+          curs={resCurs}
+        >
+        </SubResume>
 
 
-      
+
       </div>
       <div className="content">
+        <Media query={{ maxWidth: 421 }}>
+          <div className = 'mobileNav'>
+          <div class = 'header'> 
+            <h2 onClick={() => {toggleMobileMenu(!mobileMenuIsOpen)}}> 
+              menu  
+            </h2>  
+          </div>
 
-        <div className = "tabs"> 
-        {
-          tabs.map((tab, i) => (
-            <div className = {selected === tab ? 'tab activetab' : 'tab'}
-                 onClick = {() => {
-                   setSelected(tab);
-                   i === 0 ? setHighlighted(0) : setHighlighted(i-1);
-                   }}>
-              {tab}
+          <div className = {mobileMenuIsOpen ? 'mobile-nav-overlay open' : 'mobile-nav-overlay' }>
+            <div className = { mobileMenuIsOpen ? 'close-icon' : 'hide'}>
+              <h1 className = 'h1-mobile-title'
+                  onClick={() => {toggleMobileMenu(!mobileMenuIsOpen)}}
+              > 
+                X
+              </h1>
             </div>
-          ))
-        }
-        </div> 
+            {
+              tabs.map((tab, i) => (
+                <h1
+                  className = 'h1-mobile-title'
+                  onClick={() => {
+                    setSelected(tab);
+                    i === 0 ? setHighlighted(0) : setHighlighted(i - 1);
+                    toggleMobileMenu(!mobileMenuIsOpen);
+                  }}>
+                  {tab}
+                </h1>
+              ))
+            }
+          </div>
+          </div>
+
+        </Media>
+
+        <Media query={{ minWidth: 421 }}>
+          <div className="tabs">
+            {
+              tabs.map((tab, i) => (
+                <div className={selected === tab ? 'tab activetab' : 'tab'}
+                  onClick={() => {
+                    setSelected(tab);
+                    i === 0 ? setHighlighted(0) : setHighlighted(i - 1);
+                  }}>
+                  {tab}
+                </div>
+              ))
+            }
+          </div>
+        </Media>
+
+
+
         <h1> {selected} </h1>
-        {selected === defaultSelect && <p> For keyboard enthusiasts: use 't' to toggle the explorer then use 'w' and 's' to move up and down and 'x' to go back. </p>}
+        {selected === defaultSelect && <About />}
       </div>
 
-      <div className = "footer">
-           <div> <GitHubIcon fontSize = 'small'> </GitHubIcon> <MailIcon fontSize = 'small'> </MailIcon></div>
-           <div><p> welcometowasif.xyz:v1.0</p></div>
-     </div>
+      <div className="footer">
+        <div class = "footer-section"> <GitHubIcon fontSize='small'> </GitHubIcon> <MailIcon fontSize='small'> </MailIcon></div>
+        <Media query={{ minWidth: 421 }}>
+          <div class = 'footer-section'><p> For keyboard enthusiasts: use 't' to toggle the explorer then use 'w' and 's' to move up and down and 'x' to go back.</p></div>
+        </Media>
+        <div class = 'footer-section'><p> welcometowasif.xyz:v1.0</p></div>
+      </div>
     </div>
   );
 }
