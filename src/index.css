@@ -4,19 +4,17 @@ html {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width: 100vw;
-  min-height:100vh;
   background-color: var(--main-background);
-
+  min-height: 100vh;
+  min-width: 100vw;
   /*--primary-color:#F5007A;*/
 }
 
 body{
   margin: 0;
   padding: 0;
-  overflow: hidden;
   min-height: 100vh;
-
+  overflow-x: hidden;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

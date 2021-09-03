@@ -6,10 +6,11 @@
     justify-content: center;
     align-items: center;
     margin: 0px;
+    padding: 0;
 }
 
 .column{
-    height: 90%;
+
     width: 300px;
     margin: 10px;
     align-self: start;
@@ -32,7 +33,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
+   
 }
 
 .words{
@@ -106,7 +107,7 @@ a.button2:active{
     }
 
     .home{
-        margin-top: 30px;
+        margin-top: 30vh;
     }
 
     .column{
@@ -118,6 +119,8 @@ a.button2:active{
 .home
     {
      margin-top: 30px;
+     height: 100vh;
+     padding: 0 50px; 
     }
     .column{
         margin: 10px;

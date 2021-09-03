@@ -55,7 +55,7 @@ function SubProjects(props) {
     <>
       <div
         className={projInd === props.highlighted ? 'active' : null}
-      > > projects
+      >  projects
       </div>
 
       <div
@@ -78,7 +78,7 @@ function SubProjects(props) {
         {projects.map((project, i) => (
           <div
             className={i === props.curs ? 'active subitem' : 'subitem'}
-          > > {project}
+          >  {project}
           </div>
         ))}
 
@@ -96,7 +96,7 @@ function SubExperience(props) {
     <>
       <div
         className={expInd === props.highlighted ? 'active' : null}
-      > > experience
+      > experience
       </div>
 
       <div
@@ -120,7 +120,7 @@ function SubExperience(props) {
         {experiences.map((experience, i) => (
           <div
             className={i === props.curs ? 'active subitem' : 'subitem'}
-          > > {experience}
+          >  {experience}
           </div>
         ))}
 
@@ -137,7 +137,7 @@ function SubInterests(props) {
     <>
       <div
         className={intInd === props.highlighted ? 'active' : null}
-      > > interests
+      >  interests
       </div>
 
       <div
@@ -159,7 +159,7 @@ function SubInterests(props) {
           <div
             className={i === props.curs ? 'active subitem' : 'subitem'}
 
-          > > {interest}
+          >  {interest}
           </div>
         ))}
 
@@ -177,7 +177,7 @@ function SubResume(props) {
     <>
       <div
         className={resInd === props.highlighted ? 'active' : null}
-      > > resume
+      >  resume
       </div>
 
       <div
@@ -198,7 +198,7 @@ function SubResume(props) {
         {resumes.map((resume, i) => (
           <div
             className={i === props.curs ? 'active subitem' : 'subitem'}
-          > > {resume}
+          > {resume}
           </div>
         ))}
 
@@ -372,7 +372,7 @@ function App() {
 
       </div>
       <div className="content">
-        <Media query={{ maxWidth: 421 }}>
+        <Media query={{ maxWidth: 620 }}>
           <div className = 'mobileNav'>
           <div class = 'header'> 
             <h2 onClick={() => {toggleMobileMenu(!mobileMenuIsOpen)}}> 
@@ -406,7 +406,7 @@ function App() {
 
         </Media>
 
-        <Media query={{ minWidth: 421 }}>
+        <Media query={{ minWidth: 620 }}>
           <div className="tabs">
             {
               tabs.map((tab, i) => (
@@ -424,13 +424,13 @@ function App() {
 
 
 
-        <h1> {selected} </h1>
+        
         {selected === defaultSelect && <About />}
       </div>
 
       <div className="footer">
         <div class = "footer-section"> <GitHubIcon fontSize='small'> </GitHubIcon> <MailIcon fontSize='small'> </MailIcon></div>
-        <Media query={{ minWidth: 421 }}>
+        <Media query={{ minWidth: 620 }}>
           <div class = 'footer-section'><p> For keyboard enthusiasts: use 't' to toggle the explorer then use 'w' and 's' to move up and down and 'x' to go back.</p></div>
         </Media>
         <div class = 'footer-section'><p> welcometowasif.xyz:v1.0</p></div>

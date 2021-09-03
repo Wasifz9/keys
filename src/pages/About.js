@@ -7,7 +7,8 @@ class About extends React.Component {
 
             <div className = 'everythingelse'>
                 <div className = "home">
-                    <p className = "info" style = {{margin: 10 + 'px' }}> Hey! I'm a computer engineering student at the University of Toronto looking for an internship for <span className = 'highlighted'> Summer 2021! </span> <br/> I'm interested in the fields of operating systems, machine learning and full-stack development.
+                    <h1>welcome to wasif</h1>
+                    <p className = "info" style = {{margin: 10 + 'px' }}> Hey! I'm a computer engineering student at the University of Toronto graduating in April 2022, and therefore, looking for an internship/full-time role for  <span className = 'highlighted'> Summer 2022! </span> <br/> I'm interested in the fields of distributed/operating systems, machine learning and full-stack development.
                     <br/> </p>
                     <div className = "actions">
                    
