@@ -2,7 +2,8 @@
 import './App.css';
 import { useEffect, useRef, useState } from 'react';
 import Projects from './Projects.js';
-import About from './pages/About.js'; 
+import About from './pages/About.js';
+import WorkExperience from './pages/WorkExperience'; 
 import GitHubIcon from '@material-ui/icons/GitHub';
 import MailIcon from '@material-ui/icons/Mail';
 import Media from 'react-media';
@@ -426,6 +427,7 @@ function App() {
 
         
         {selected === defaultSelect && <About />}
+        {selected === 'experience'&& <WorkExperience />}
       </div>
 
       <div className="footer">

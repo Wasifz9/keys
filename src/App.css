@@ -9,6 +9,7 @@
 
 }
 
+
 h2{
   margin: 0px;
   font-weight: 100;
@@ -30,8 +31,7 @@ h3{
 }
 
 li {
-  list-style: none;
-  font-weight: 100;
+
 }
 
 .active {
