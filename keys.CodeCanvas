@@ -1,0 +1,15 @@
+{
+	"drawioXML": "<mxfile>\n  <diagram id=\"998qIDpqRGOXBMQyEBQo\" name=\"Page-1\">\n    <mxGraphModel dx=\"1406\" dy=\"724\" grid=\"0\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"0\" pageScale=\"1\" pageWidth=\"850\" pageHeight=\"1100\" math=\"0\" shadow=\"0\">\n      <root>\n        <mxCell id=\"0\" />\n        <mxCell id=\"1\" style=\"shadow=0;\" parent=\"0\" />\n        <UserObject label=\"index.html\" value=\"index.html\" id=\"glDlhA1gKNA5Mxda9BYd-1\">\n          <mxCell style=\"shadow=0;\" vertex=\"1\" parent=\"1\">\n            <mxGeometry x=\"43\" y=\"181\" width=\"120\" height=\"60\" as=\"geometry\" />\n          </mxCell>\n        </UserObject>\n      </root>\n    </mxGraphModel>\n  </diagram>\n</mxfile>\n",
+	"fileName": "keys.CodeCanvas",
+	"fileURL": "https://raw.githubusercontent.com/Wasifz9/keys/3e4ed389515edf9e37a9975e3efc2f22492c2062/keys.CodeCanvas",
+	"repoData": {
+		"index.html": {
+			"name": "index.html",
+			"path": "index.html",
+			"cellId": "glDlhA1gKNA5Mxda9BYd-1"
+		}
+	},
+	"cellToPath": {
+		"glDlhA1gKNA5Mxda9BYd-1": "index.html"
+	}
+}
